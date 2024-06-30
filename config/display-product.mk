@@ -67,6 +67,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.high_fps_early_gl_phase_offset_ns=-2000000
 endif
 
+ifeq ($(TARGET_1G_DDR_RAM), true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.display.disable_layer_stitch=1 \
+    vendor.display.disable_cache_manager=1
+endif
+
 ifeq ($(TARGET_BOARD_PLATFORM),monaco)
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.disable_layer_stitch=1
